@@ -14,8 +14,10 @@ public class TestEmployee {
 		// TODO Auto-generated method stub
 		EmployeeService eservice = new EmployeeServiceImpl();
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter File Name : ");
+		String fname = sc.nextLine();
 		
-		eservice.readFile("employee.txt");
+		eservice.readFile(fname);
 		
 		int choice = 0;
 		
@@ -86,11 +88,7 @@ public class TestEmployee {
 				
 				eservice.codingChallange();
 				
-			}
-			
-			
-			
-			
+			} 			
 			}
 			
 		}while(choice!=7);

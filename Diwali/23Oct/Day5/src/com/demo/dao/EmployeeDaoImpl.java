@@ -24,22 +24,22 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	
 	@Override
 	public void readData(String string) {
-
-		File f = new File("empoyee.txt");
+		File f = new File(string);
 		if (f.exists())
-			try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+			try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) { // Chaining
 				while (true) {
-					try {
+					try {                                          // Here we are performing De-serialization
 						Employee e = (Employee)ois.readObject();
 						lst.add(e);
 					} catch (EOFException e) {
-						System.out.println("Reached end of file.");
+						System.out.println("Reached the end of file.");
 						break;
 					}
 				}
 			} catch (IOException | ClassNotFoundException e) {
 				e.printStackTrace();
 			}
+		System.out.println("File readed successfully");
 	}
 
 
