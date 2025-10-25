@@ -19,7 +19,7 @@ public class Calculator {
 		ch = sc.next();
 		
 		try {
-		    calculate(a, b, ch); 
+		    calculate(a, b, ch);  
 		} catch (WrongOperatorException e) {
 		    System.out.println("Caught Custom Exception: " + e.getMessage());
 		} catch (Exception e) {
